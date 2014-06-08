@@ -71,3 +71,55 @@ table(rest$nearme)
 rest$zipGroups <- cut(rest$zipCode, breaks = quantile(rest$zipCode))
 table(rest$zipGroups)
 
+data(mtcars)
+str(mtcars)
+mtcars$carname <- rownames(mtcars)
+str(mtcars)
+carmelt <- melt(mtcars, id = c('carname', 'gear', 'cyl'), measure.vars = c('mpg', 'hp'))
+head(carmelt)
+str(carmelt)
+
+cyldata <- dcast(carmelt, cyl ~ variable)
+str(cyldata)
+
+cyldata <- dcast(carmelt, cyl ~ variable, mean)
+cyldata
+
+data(InsectSprays)
+head(InsectSprays)
+
+tapply(InsectSprays$count, InsectSprays$spray, sum)
+tapply(InsectSprays$spray, InsectSprays$count, sum)
+
+InSp <- split(InsectSprays$count, InsectSprays$spray)
+str(InSp)
+SpCo <- lapply(InSp, sum)
+SpCo
+
+unlist(SpCo)
+
+str(InsectSprays)
+
+library(plyr)
+?ply
+?ddply
+
+ddply(InsectSprays, .(spray), summarize, sum = sum(count))
+
+fileUrl1 <- 'https://dl.dropboxusercontent.com/u/7710864/data/reviews-apr29.csv'
+fileUrl2 <- 'https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv'
+download.file(fileUrl1, destfile = 'reviews.csv', method = 'curl')
+download.file(fileUrl2, destfile = 'solutions.csv', method = 'curl')
+reviews <- read.csv('reviews.csv')
+solns <- read.csv('solutions.csv')
+head(reviews)
+head(solns)
+
+names(reviews)
+names(solns)
+
+merged <- merge(reviews, solns, by.x = 'solution_id', by.y = 'id', all = T)
+str(merged)
+
+head(merged)
+
