@@ -30,10 +30,10 @@ The run_analysis tidies the data via the following procedures:
 3. Read the feature names, and activity id and names as 'feature' and 'activity'.
 
 4. Column names are then assigned to the data sets.
-- 'train_data' and 'test_data' columns receive names based on 'feature'.  
-- 'train_label' and 'test_label' columns are renamed 'activity_id'.
-- 'train_subject' and 'test_subject' columns are renamed 'subject_id'.
-- 'activity' columns are renamed 'activity_id' and 'activity_name'.
+	- 'train_data' and 'test_data' columns receive names based on 'feature'.  
+	- 'train_label' and 'test_label' columns are renamed 'activity_id'.
+	- 'train_subject' and 'test_subject' columns are renamed 'subject_id'.
+	- 'activity' columns are renamed 'activity_id' and 'activity_name'.
 
 5. Merge (via columnbind) 'train_data', 'train_label', and 'train_subject' to create a single data set for training data called 'train_set'.
 6. Merge (via columnbind) 'test_data', 'test_label', 'test_subject' to create a single data set for test data called 'test_set'.
