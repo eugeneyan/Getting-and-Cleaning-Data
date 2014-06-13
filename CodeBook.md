@@ -23,7 +23,7 @@ For each record it is provided:
 
 About the run_analysis.R Script
 -------------------------------
-The run_analysis tidies the data via the following procedures:
+The run_analysis.R script tidies the data via the following procedures:
 
 1. Read the training data, labels, and subjects as 'train_data', 'train_label', and 'train_subject'.
 
@@ -49,7 +49,7 @@ The run_analysis tidies the data via the following procedures:
 
 11. Create 'tidy_data' by aggregating 'all_data' by 'activity_name' and 'subject_id' to derive mean values for each feature.  
 
-12. Remove 'subject_id' and 'activity_name' columns (that only show NA).
+12. Remove 'subject_id' and 'activity_name' columns (since they only show NA).
 
 13. Write 'tidy_data' into a csv file 'tidy_data.csv'.
 
