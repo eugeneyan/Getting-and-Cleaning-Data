@@ -26,7 +26,9 @@ About the run_analysis.R Script
 The run_analysis tidies the data via the following procedures:
 
 1. Read the training data, labels, and subjects as 'train_data', 'train_label', and 'train_subject'.
+
 2. Read the test data, labels, and subjects as 'test_data', 'test_label', and 'test_subject'. 
+
 3. Read the feature names, and activity id and names as 'feature' and 'activity'.
 
 4. Column names are then assigned to the data sets.
